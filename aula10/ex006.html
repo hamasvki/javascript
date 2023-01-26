@@ -19,14 +19,17 @@
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="area">
         Interaja...
     </div>
 
     <script>
-        var a = document.getElementById('area')
+        var a = document.getElementById('area') // definindo uma variável para a div "area"
+        a.addEventListener('click', clicar) // nomeando a função "click" (padrão do javascript) como "clicar"
+        a.addEventListener('mouseover', entrar)
+        a.addEventListener('mouseout', sair)
 
-        function clicar() {
+        function clicar() { // aqui dentro vai o que acontece quando a função "click" for ativada dentro da variável "a" que nesse caso é a div "area"
             a.innerText = 'Clicou!'
             a.style.background = 'red'
         }
